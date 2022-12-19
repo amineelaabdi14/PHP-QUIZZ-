@@ -1,0 +1,59 @@
+$bg-color:#404258;
+$button:#474E68;
+$myFont:'Open Sans', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap');
+
+body{
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    background-color: $bg-color;
+    overflow: hidden;
+}
+#index-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#php-logo {
+    width: 500px;
+}
+@media (max-width:992px){
+    #index-content{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+#description{
+    color: rgb(226, 226, 226);
+    font-family: $myFont;
+    font-size: 1.4rem;
+    width: 500px;
+    text-align: justify;
+    line-height: 2.9rem;
+    font-weight: medium;
+}
+@mixin button {
+    background-color: $button;
+    border: 0;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.35rem;
+    color:white;
+}
+
+#take-test{
+    @include button;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+#take-test:hover{
+    background-color: white;
+    color: $bg-color;
+}
