@@ -1,5 +1,4 @@
 $bg-color:#404258;
-$button:#474E68;
 $myFont:'Open Sans', sans-serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap');
@@ -37,7 +36,7 @@ body{
     font-weight: medium;
 }
 @mixin button {
-    background-color: $button;
+    background-color: $bg-color;
     border: 0;
     border-radius: 6px;
     text-align: center;
@@ -57,3 +56,69 @@ body{
     background-color: white;
     color: $bg-color;
 }
+#question-container{
+    background-color:white;
+    border-radius: 6px;
+    height: 400px;
+    width: 90vw;
+    min-width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    color: black;
+    font-family: $myFont;
+    font-weight:bolder;
+    font-size: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#responses-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    margin: auto;
+    margin-top: 2rem;
+  }
+  
+  .response {
+    background-color: black;
+    width: 20vw;
+    color: white;
+    height: 140px;
+    border-radius: 6px;
+    background-color: #d4939d;
+    font-family: $myFont;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .response:hover{
+    background-color: $bg-color;
+    border: 3px solid #d4939d;
+    cursor: pointer;
+  }
+  #counter{
+    margin-left: 5vw;
+    font-family: $myFont;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    width: 200px;
+    height: 40px;
+    margin-top: 2rem;
+    text-align: left;
+  }
+  #counter span {
+    background-color: black;
+    border-radius: 6px;
+    height: 40px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .3rem;
+  }
