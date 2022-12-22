@@ -1,9 +1,11 @@
 class User {
-    constructor(correct,falseAnswers,responseTime,currentQuestion){
-        this.correct=correct;
+    constructor(correctAnswers,falseAnswers,responseTime,currentQuestion=0,totalQuestions=questions.length){
+        this.shuffle();
+        this.correctAnswers=correctAnswers;
         this.falseAnswers=falseAnswers;
         this.responseTime=responseTime;
         this.currentQuestion=currentQuestion;
+        this.totalQuestions=totalQuestions;
     }
     shuffle(){
         for(let i=questions.length-1;i>0;i--)
@@ -12,7 +14,19 @@ class User {
             [ questions[randIndex] , questions[i] ] = [ questions[i] , questions[randIndex] ];
         }
     }
-    getQuestionsByOrder(){
-        return question[this.currentQuestion];
+    getAnswer(){
+
+    }
+    getCurrentQuestion(){
+        let question = questions[this.currentQuestion];
+        this.currentQuestion++;
+        return question;
+    }
+    submitAnswer(){
+
+    }
+    
+    getResult(){
+
     }
 }
