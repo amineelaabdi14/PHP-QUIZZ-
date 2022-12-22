@@ -1,11 +1,12 @@
 class User {
-    constructor(correctAnswers,falseAnswers,responseTime,currentQuestion=0,totalQuestions=questions.length){
+    constructor(correctAnswers=0,falseAnswers=0,responseTime,currentQuestion=0,totalQuestions=questions.length){
         this.shuffle();
-        this.correctAnswers=correctAnswers;
         this.falseAnswers=falseAnswers;
         this.responseTime=responseTime;
         this.currentQuestion=currentQuestion;
         this.totalQuestions=totalQuestions;
+        this.correctAnswers=questions[this.currentQuestion].answer;
+
     }
     shuffle(){
         for(let i=questions.length-1;i>0;i--)
@@ -14,11 +15,13 @@ class User {
             [ questions[randIndex] , questions[i] ] = [ questions[i] , questions[randIndex] ];
         }
     }
-    getAnswer(){
-
+    checkAnswer(answer){
+        if (answer == this.correctAnswers) return true;
+        else return false
     }
     getCurrentQuestion(){
         let question = questions[this.currentQuestion];
+        this.correctAnswers=questions[this.currentQuestion].answer;
         this.currentQuestion++;
         return question;
     }

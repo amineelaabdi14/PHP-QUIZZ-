@@ -26,18 +26,18 @@
         <div id="responses-area">
 
             <div id="first-responses">
-                <div id="res1" class="response">
+                <div id="res1" class="response" onclick="submitAnswer(this,'1')">
                     
                 </div>
-                <div id="res2" class="response">
+                <div id="res2" class="response" onclick="submitAnswer(this,'2')">
                     
                 </div>
             </div>
             <div id="second-responses">
-                <div id="res3" class="response">
+                <div id="res3" class="response" onclick="submitAnswer(this,'3')">
                     
                 </div>
-                <div id="res4" class="response">
+                <div id="res4" class="response" onclick="submitAnswer(this,'4')">
                     
                 </div>
             </div>
@@ -47,6 +47,6 @@
     <script src="/classes/User.classe.js"></script>
     <script src="/assests/js/app.js"></script>
     <script src="https://kit.fontawesome.com/6360d947ff.js" crossorigin="anonymous"></script>
-    <script>showQuestions();</script>
+    <script>startQuizz();</script>
 </body>
 </html>
