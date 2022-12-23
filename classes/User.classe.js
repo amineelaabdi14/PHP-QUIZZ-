@@ -17,7 +17,6 @@ class User {
     }
     getCurrentQuestion(){
         let question = questions[this.currentQuestion];
-        this.correctAnswers=questions[this.currentQuestion].answer;
         this.currentQuestion++;
         return question;
     }

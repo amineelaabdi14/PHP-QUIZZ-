@@ -2,6 +2,7 @@
 let myUser;
 function startQuizz(){
     let user= new User()
+    user.correctAnswers=0;
     myUser=user;
     showQuestions();
 }
@@ -33,17 +34,17 @@ function showAnswers(){
 
 
 function submitAnswer(element,answer){
-    myUser.responseTime[currentQuestion-1]=document.getElementById('myTimer').innerText;
+    myUser.responseTime[currentQuestion-1]=10-document.getElementById('myTimer').innerText;
     document.getElementById('inner-progress-bar').style.width=( currentQuestion*100 / myUser.totalQuestions)+'%';
-    if(question.answer==answer)
+    if(Number(question.answer)==Number(answer))
     {   
-        myUser.correctAnswers+=1;
+        myUser.correctAnswers++;
         timer=10;
         clearTimeout(myTimer);
         showQuestions();
     }
     else {
-        myUser.falseAnswers+=1;
+        myUser.falseAnswers++;
         timer=10;
         clearTimeout(myTimer);
         showQuestions();
@@ -61,6 +62,7 @@ function startTimer(){
         myTimer=setTimeout(startTimer,1000);
     }    
     else {
+        console.log('here');
         myUser.falseAnswers+=1;
         timer=10;
         showQuestions();
