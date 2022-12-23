@@ -7,7 +7,6 @@ function startQuizz(){
 }
 
 
-
 let currentQuestion=0;
 let question;
 function showQuestions(){
@@ -23,17 +22,18 @@ function showQuestions(){
         currentQuestion++;
     }
     else{
-        showResult();
+        myUser.setResult();
+        window.location.href='result.html'
     }
 }
 
 
 function showAnswers(){
-
 }
 
+
 function submitAnswer(element,answer){
-    console.log(document.getElementById('inner-progress-bar').style.width);
+    myUser.responseTime[currentQuestion-1]=document.getElementById('myTimer').innerText;
     document.getElementById('inner-progress-bar').style.width=( currentQuestion*100 / myUser.totalQuestions)+'%';
     if(question.answer==answer)
     {   
@@ -51,7 +51,7 @@ function submitAnswer(element,answer){
 }
 
 
-let timer=10000;
+let timer=10;
 let myTimer;
 function startTimer(){
     document.getElementById('myTimer').innerText=timer;
@@ -69,6 +69,8 @@ function startTimer(){
     
 
 function showResult(){
-    window.location.href="result.html";
-    document.getElementById('myResult').innerText=myUser.getResult();
+    document.getElementById('correct-answers').children[1].innerText=localStorage.getItem("correct");
+    document.getElementById('false-answers').children[1].innerText=localStorage.getItem("false");
+    document.getElementById('avg-time').children[1].innerText=localStorage.getItem("responseTime")+"s";
+    localStorage.clear();
 }
