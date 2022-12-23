@@ -6,10 +6,11 @@ function startQuizz(){
     showQuestions();
 }
 let currentQuestion=0;
+let question;
 function showQuestions(){
     if(currentQuestion!=myUser.totalQuestions)
     {   
-        let question = myUser.getCurrentQuestion();
+        question = myUser.getCurrentQuestion();
         document.getElementById('myQuestion').innerText=question.question;
         document.getElementById('res1').innerText=question.choice1;
         document.getElementById('res2').innerText=question.choice2;
@@ -17,7 +18,6 @@ function showQuestions(){
         document.getElementById('res4').innerText=question.choice4;
         startTimer();
         currentQuestion++;
-        
     }
     else{
         showResult();
@@ -30,7 +30,7 @@ function showAnswers(){
 }
 
 function submitAnswer(element,answer){
-    if(myUser.checkAnswer(answer)==true)
+    if(question.answer==answer)
     {   
         myUser.correctAnswers+=1;
         timer=10;
@@ -64,5 +64,6 @@ function startTimer(){
     
 
 function showResult(){
-    console.log('the end');
+    window.location.href="result.html";
+    document.getElementById('myResult').innerText=myUser.getResult();
 }

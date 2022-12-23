@@ -15,10 +15,6 @@ class User {
             [ questions[randIndex] , questions[i] ] = [ questions[i] , questions[randIndex] ];
         }
     }
-    checkAnswer(answer){
-        if (answer == this.correctAnswers) return true;
-        else return false
-    }
     getCurrentQuestion(){
         let question = questions[this.currentQuestion];
         this.correctAnswers=questions[this.currentQuestion].answer;
