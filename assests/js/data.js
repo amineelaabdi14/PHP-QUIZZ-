@@ -29,6 +29,6 @@ let questions=[
         "choice2": "PHP 5", 
         "choice3": "PHP 5.3", 
         "choice4": "PHP 7.2",
-        "answer": 5
+        "answer": 2
     }
 ];
