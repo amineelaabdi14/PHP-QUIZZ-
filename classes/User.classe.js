@@ -1,5 +1,5 @@
 class User {
-    constructor(correctAnswers=0,falseAnswers=0,responseTime,currentQuestion=0,totalQuestions=questions.length){
+    constructor(correctAnswers=0,falseAnswers=0,responseTime=[],currentQuestion=0,totalQuestions=questions.length){
         this.shuffle();
         this.falseAnswers=falseAnswers;
         this.responseTime=responseTime;
@@ -21,11 +21,16 @@ class User {
         this.currentQuestion++;
         return question;
     }
-    submitAnswer(){
-
-    }
     
-    getResult(){
-
+    setResult(){
+        let avgTime=0, total=0;
+        for(let i of this.responseTime)
+        {   
+            total+=Number(i);
+        }
+        avgTime=total/myUser.responseTime.length;
+        localStorage.setItem("correct", this.correctAnswers);
+        localStorage.setItem("false", this.falseAnswers);
+        localStorage.setItem("responseTime", avgTime);
     }
 }
