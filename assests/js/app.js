@@ -5,6 +5,9 @@ function startQuizz(){
     myUser=user;
     showQuestions();
 }
+
+
+
 let currentQuestion=0;
 let question;
 function showQuestions(){
@@ -30,6 +33,8 @@ function showAnswers(){
 }
 
 function submitAnswer(element,answer){
+    console.log(document.getElementById('inner-progress-bar').style.width);
+    document.getElementById('inner-progress-bar').style.width=( currentQuestion*100 / myUser.totalQuestions)+'%';
     if(question.answer==answer)
     {   
         myUser.correctAnswers+=1;
@@ -46,7 +51,7 @@ function submitAnswer(element,answer){
 }
 
 
-let timer=10;
+let timer=10000;
 let myTimer;
 function startTimer(){
     document.getElementById('myTimer').innerText=timer;
