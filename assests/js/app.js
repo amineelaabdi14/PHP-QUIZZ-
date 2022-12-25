@@ -29,10 +29,6 @@ function showQuestions(){
 }
 
 
-function showAnswers(){
-}
-
-
 function submitAnswer(element,answer){
     myUser.responseTime[currentQuestion-1]=10-document.getElementById('myTimer').innerText;
     document.getElementById('inner-progress-bar').style.width=( currentQuestion*100 / myUser.totalQuestions)+'%';
@@ -62,7 +58,8 @@ function startTimer(){
         myTimer=setTimeout(startTimer,1000);
     }    
     else {
-        console.log('here');
+        myUser.responseTime[currentQuestion-1]=10;
+        document.getElementById('inner-progress-bar').style.width=( currentQuestion*100 / myUser.totalQuestions)+'%';
         myUser.falseAnswers+=1;
         timer=10;
         showQuestions();

@@ -24,7 +24,7 @@ class User {
     setResult(){
         let avgTime=0, total=0;
         for(let i of this.responseTime)
-        {   
+        {
             total+=Number(i);
         }
         avgTime=total/myUser.responseTime.length;
