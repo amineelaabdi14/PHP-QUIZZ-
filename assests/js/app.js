@@ -73,3 +73,7 @@ function showResult(){
     document.getElementById('avg-time').children[1].innerText=localStorage.getItem("responseTime")+"s";
     localStorage.clear();
 }
+
+function navigation(location){
+    document.getElementsByClassName('myIcon')[location-1].classList.add('active-icon');
+}
