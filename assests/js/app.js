@@ -30,25 +30,25 @@ function showQuestions(){
 
 
 function submitAnswer(element,answer){
-    myUser.responseTime[currentQuestion-1]=10-document.getElementById('myTimer').innerText;
+    myUser.responseTime[currentQuestion-1]=30-document.getElementById('myTimer').innerText;
     document.getElementById('inner-progress-bar').style.width=( currentQuestion*100 / myUser.totalQuestions)+'%';
     if(Number(question.answer)==Number(answer))
     {   
         myUser.correctAnswers++;
-        timer=10;
+        timer=30;
         clearTimeout(myTimer);
         showQuestions();
     }
     else {
         myUser.falseAnswers++;
-        timer=10;
+        timer=30;
         clearTimeout(myTimer);
         showQuestions();
     }
 }
 
 
-let timer=10;
+let timer=30;
 let myTimer;
 function startTimer(){
     document.getElementById('myTimer').innerText=timer;
@@ -61,7 +61,7 @@ function startTimer(){
         myUser.responseTime[currentQuestion-1]=10;
         document.getElementById('inner-progress-bar').style.width=( currentQuestion*100 / myUser.totalQuestions)+'%';
         myUser.falseAnswers+=1;
-        timer=10;
+        timer=30;
         showQuestions();
     }
 }
